@@ -48,27 +48,28 @@ function execute_query_filters() {
     let token = "";
 
     function gradeEval(val) {
-        console.log(val);
+        if (val == null)
+            return 'N/A';
         if (val >= 4.0)
-            return '(A)';
+            return val + '(A)';
         if (val >= 3.7)
-            return '(A-)';
+            return val + '(A-)';
         if (val >= 3.3)
-            return '(A+)';
+            return val + '(A+)';
         if (val >= 3.0)
-            return '(B)';
+            return val + '(B)';
         if (val >= 2.7)
-            return '(B-)';
+            return val + '(B-)';
         if (val >= 2.3)
-            return '(C+)';
+            return val + '(C+)';
         if (val >= 2.0)
-            return '(C)';
+            return val + '(C)';
         if (val >= 1.7)
-            return '(C-)';
+            return val + '(C-)';
         if (val >= 1.3)
-            return '(D+)';
+            return val + '(D+)';
         else
-            return '(N/A)';
+            return val + '(N/A)';
     }
 
     function getCourseName(name) {
@@ -98,10 +99,10 @@ function execute_query_filters() {
                 '</td><td align="right">' +
                 '<span">' + item.studyHrs + '</span>' +
                 '</td><td align="right">' +
-                '<span>' + item.avgGradeExpected + gradeEval(item.avgGradeExpected) + '</span>' +
+                '<span>' + gradeEval(item.avgGradeExpected) + '</span>' +
                 '</td><td align="right">' +
-                '<span>' + item.avgGradeReceived + gradeEval(item.avgGradeReceived) + '</span>'
-            '</td>' +
+                '<span>' + gradeEval(item.avgGradeReceived) + '</span>' +
+                '</td>' +
                 '</tr>'
         });
         loading_bar.css('display', 'none');
