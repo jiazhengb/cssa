@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/dropdown.css" rel="stylesheet" type="text/css">
+  <script src="https://unpkg.com/lodash@4.16.6"></script>
+  <title>NAMELESS CAPE</title>
+</head>
+
+<body>
+  <nav>
+    <ul id="dropdown-menu-david">
+      <li>
+        <ul class="dropdown-menu">
+          <li><a href="#">MORE</a>
+            <ul>
+              <li><a href="http://ucsdcssa.com">ABOUT CSSA</a></li>
+              <li><a href="#">WECHAT</a></li>
+              <li><a href="#">FACEBOOK</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <section class="info">
+    <div class="title">"NAMELESS CAPE"</div>
+    <ul class="extra">
+      <p>HISTORY ALWAYS PROVES EVERYTHING</p>
+      <p>CHECK THE "RESULTS" BEFORE YOU MAKE A MOVE</p>
+    </ul>
+    <div class="wrap">
+      <form class="search" action="" method="POST" class="form" onsubmit="execute_query_filters()">
+        <input type="text" class="searchbar" id="searchCourse" placeholder="Search...">
+        <button type="submit" class="searchButton">
+          <i class="searchclick">></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section class="classlist">
+    <div class="loader" id="loading_bar"></div>
+    <div id="search_results"></div>
+  </section>
+
+  <footer>
+    <div class="iconword">UCSD Chinese Students and Scholars Association</div>
+  </footer>
+
+  <script src="src/index.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
