@@ -14,8 +14,12 @@ section{
 }
 
 footer{
+  position: absolute;
   padding: 2rem 0 2rem 0 ;
   text-align: center;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,0);
 }
 
 nav {

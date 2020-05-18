@@ -74,9 +74,6 @@ function execute_query_filters() {
     function getCourseName(name) {
         firstDigit = name.match(/\d/);
         indexed = name.indexOf(firstDigit);
-        // let courseNum = name.toString().replace(/[^0-9]/ig,"");
-        // let courseNam = name.toString().replace(/\d+/g,'');
-        // console.log(courseNam+'.'+courseNum);
         return name.substring(0., indexed) + '.' + name.substring(indexed);
     }
 
