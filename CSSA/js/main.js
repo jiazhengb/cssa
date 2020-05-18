@@ -81,7 +81,7 @@ function execute_query_filters() {
     $.ajax({
         // headers: { "X-CSRFToken": token },
         // type: "POST",
-        url: "http://104.236.138.205:8080/ucsdcssa/course/" + getCourseName(courseName),
+        url: "http://104.236.138.205:8080/namelesscape/course/" + getCourseName(courseName),
         // data: data,
     }).done(function (res) {
         var courseDate = '';
