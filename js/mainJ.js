@@ -45,7 +45,8 @@ function execute_query_filters() {
         "course_level_upper_filter": course_level_upper_filter,
         "course_level_graduate_filter": course_level_graduate_filter
     };
-    let token = "";
+    
+    let token = "x=whGTdxSHX8M+c3";
 
     function gradeEval(val) {
         if (val == null)
@@ -79,9 +80,9 @@ function execute_query_filters() {
     }
 
     $.ajax({
-        // headers: { "X-CSRFToken": token },
-        // type: "POST",
-        url: "http://104.236.138.205:8080/namelesscape/course/" + getCourseName(courseName),
+        headers: {"token": token },
+        type: "POST",
+        url: "https://104.236.138.205:8080/namelesscape/course/" + getCourseName(courseName),
         // data: data,
     }).done(function (res) {
         var courseDate = '';
@@ -89,7 +90,7 @@ function execute_query_filters() {
             courseDate +=
                 '<tr class="' + (index % 2 == 0 ? "even" : "odd") + '">' +
                 '<td>' + item.instructor + '</td><td>' +
-                '<a target="_blank">+' + item.course + '+</a>' +
+                '<a target="_blank">' + item.course + '</a>' +
                 '</td><td>' + item.term + '</td><td align="right">' + item.enroll + '</td><td align="right">' +
                 '<span ItemStyle-HorizontalAlign="Right">' + item.evalsMade + '</span>' +
                 '</td><td align="right"' +
