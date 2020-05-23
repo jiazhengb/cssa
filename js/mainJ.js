@@ -79,10 +79,44 @@ function execute_query_filters() {
         return name.substring(0., indexed) + '.' + name.substring(indexed);
     }
 
+    sortTable = function(colunm) {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("ctl00_ContentPlaceHolder1_gvCAPEs");
+        console.log(table);
+        switching = true;
+        while (switching) {
+          // Start by saying: no switching is done:
+          switching = false;
+          rows = table.rows;
+          /* Loop through all table rows (except the
+          first, which contains table headers): */
+          for (i = 1; i < (rows.length - 1); i++) {
+            // Start by saying there should be no switching:
+            shouldSwitch = false;
+            /* Get the two elements you want to compare,
+            one from current row and one from the next: */
+            x = rows[i].$("TD")[colunm];
+            y = rows[i + 1].$("TD")[colunm];
+            // Check if the two rows should switch place:
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              // If so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            /* If a switch has been marked, make the switch
+            and mark that a switch has been done: */
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+      }
+
     $.ajax({
         headers: {"token": token },
         type: "POST",
-        url: "https://104.236.138.205:8080/namelesscape/course/" + getCourseName(courseName),
+        url: "https://104.236.138.205:8483/namelesscape/course/" + getCourseName(courseName),
         // data: data,
     }).done(function (res) {
         var courseDate = '';
@@ -116,8 +150,8 @@ function execute_query_filters() {
         // }
         $("#search_results").css('top', '0%');
         $("#search_results").html(
-            '<table class="styled" cellspacing="0" border="0" id="ctl00_ContentPlaceHolder1_gvCAPEs" style="width:100%;border-collapse:collapse;">' +
-            '<thead><tr><th scope="col">Instructor</th><th scope="col">Course</th><th scope="col">Term</th><th scope="col">Enroll</th><th scope="col">Evals Made</th><th scope="col">Rcmnd Class</th><th scope="col">Rcmnd Instr</th><th scope="col">Study Hrs/wk</th><th scope="col">Avg Grade Expected</th><th scope="col">Avg Grade Received</th></tr>' +
+            '<table cellspacing="0" border="0" id="ctl00_ContentPlaceHolder1_gvCAPEs" style="width:100%;border-collapse:collapse;">' +
+            '<thead><tr><th scope="col">Instructor</th><th scope="col">Course</th><th scope="col">Term</th><th scope="col">Enroll</th><th scope="col">Evals Made</th><th scope="col">Rcmnd Class</th><th scope="col">Rcmnd Instr</th><th scope="col" onclick="sortTable(7)">Study Hrs/wk</th><th scope="col">Avg Grade Expected</th><th scope="col">Avg Grade Received</th></tr>' +
             '</thead>' +
             '<tbody>' +
             courseDate +
