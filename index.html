@@ -11,27 +11,21 @@
 </head>
 
 <body>
-  <nav>
-    <ul id="dropdown-menu-david">
-      <li>
-        <ul class="dropdown-menu">
-          <li><a href="#">MORE</a>
-            <ul>
-              <li><a href="https://ucsdcssa.com">ABOUT CSSA</a></li>
-              <li><a href="#">WECHAT</a></li>
-              <li><a href="#">FACEBOOK</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+  <section class="topwrap">
+    <a href="" class="homewebsite">Home</a>
+    <a href="" class="wechat">Wechat</a>
+    <a href="" class="facebook">Facebook</a>
+    <a href="" class="instagram">Instagram</a>
+  </section>
   <section class="info">
-    <div class="title">"NAMELESS CAPE"</div>
-    <ul class="extra">
-      <p>HISTORY ALWAYS PROVES EVERYTHING</p>
-      <p>CHECK THE "RESULTS" BEFORE YOU MAKE A MOVE</p>
-    </ul>
+    <a class="title">-CapeX-</a>
+    <div class="clickbox">
+      <input type="checkbox"><a>Search by Professor</a>
+      <br>
+      <input type="checkbox"><a>Search by Class Name</a>
+      <br>
+      <input type="checkbox"><a>Search by Department</a>
+    </div>
     <div class="wrap">
       <form class="search" action="" method="POST" class="form" onsubmit="execute_query_filters()">
         <input type="text" class="searchbar" id="searchCourse" placeholder="Search...">
@@ -48,7 +42,7 @@
   </section>
 
   <footer>
-    <div class="iconword">UCSD Chinese Students and Scholars Association</div>
+    <img class="iconword" src="cssaicon.png" width="260">
   </footer>
 
   <script src="js/jquery.min.js"></script>
