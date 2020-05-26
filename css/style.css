@@ -1,129 +1,14 @@
+@font-face{
+  font-family: sw;
+  src:url(SWLink.ttf);
+}
 body{
   margin: 0;
   padding: 0;
-  background: #cfb053;
-  font-family: sans-serif;
+  background: #e6e6e6;
+  font-family: sw;
   font-weight: bold;
   line-height: 1;
-}
-
-section{
-  display: block;
-  padding: 4em 0;
-	position: relative;
-}
-
-footer{
-  position: relative;
-  padding: 2rem 0 2rem 0 ;
-  text-align: center;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-nav {
-  position: absolute;
-  margin-top: 20px;
-  margin-right: 20px;
-}
-nav .drop-down {
-  list-style: none;
-  overflow: hidden;
-  height: 172px;
-  background-color: #34495e;
-  font-family: Arial;
-  width: 200px;
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
-  -webkit-transition: height 0.3s ease;
-  transition: height 0.3s ease;
-}
-nav .drop-down.closed {
-  height: 43px;
-}
-nav .drop-down li {
-  border-bottom: 5px solid #2c3e50;
-}
-nav .drop-down li a {
-  display: block;
-  color: #ecf0f1;
-  text-decoration: none;
-  padding: 10px;
-}
-nav .drop-down li:first-child a:after {
-  content: "\25BC";
-  float: right;
-  margin-left: -30px;
-  margin-right: 5px;
-}
-.icon img{
-  width: 40px;
-  height: auto;
-}
-.title{
-  font-size: 5vw;
-  text-shadow: 4px 4px 6px #6b6b6b;
-  letter-spacing: -2px;
-  position: absolute;
-  left: 50%;
-  bottom: 30%;
-  transform: translate(-50%, 30%);
-}
-.extra{
-  text-shadow: 1px 1px 3px #6b6b6b;
-  font-size: 18px;
-  position: absolute;
-  letter-spacing: -1px;
-  left: 50%;
-  bottom: 30%;
-  text-align: center;
-  transform: translate(-50%, -40%);
-}
-.iconword{
-  text-shadow: 1px 1px 3px #6b6b6b;
-  font-size: 12px;
-  letter-spacing: -1px;
-  text-align: center;
-  transform: translate(0,-50%);
-}
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-}
-.searchbar {
-  width: 100%;
-  border: 3px solid #585858;
-  border-right: none;
-  padding: 5px;
-  height: 20px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  font-family: sans-serif;
-  font-size: 17px;
-}
-.searchbar:focus{
-  color: #585858;
-}
-.searchButton {
-  width: 40px;
-  height: 36px;
-  border: 1px solid #585858;
-  background: #585858;
-  text-align: center;
-  color: #cfb053;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
-}
-.wrap{
-  width: 30%;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .text-center{
   display:none;
@@ -146,6 +31,93 @@ nav .drop-down li:first-child a:after {
   height: 50px;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
+}
+
+.topwrap{
+  overflow: hidden;
+  background-color: #828282;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 33px;
+}
+.topwrap a{
+  float: right;
+  color: #d1d1d1;
+  text-align: center;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: -3px;
+}
+.topwrap a:hover {
+  background-color: #eeeeee;
+  color: rgb(36, 36, 36);
+}
+.title{
+  color: rgb(83, 83, 83);
+  font-size: 40px;
+  text-shadow: 0px 3px 4px #6b6b6b;
+  letter-spacing: 0px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.clickbox{
+  position: absolute;
+  color: rgb(83, 83, 83);
+  letter-spacing: -4px;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrap{
+  width: 23%;
+  position: absolute;
+  top:55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+.searchbar {
+  width: 100%;
+  border: 2px solid #a7a7a7;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-family: sw;
+  letter-spacing: -5px;
+  font-size: 17px;
+}
+.searchbar:focus{
+  color: #323232;
+}
+.searchButton {
+  width: 34px;
+  height: 34px;
+  border: 0.1px solid #6e6e6e;
+  background: #bababa;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.searchButton:hover{
+  background: #6e6e6e;
+}
+.iconword{
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Safari */
