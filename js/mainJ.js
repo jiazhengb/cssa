@@ -45,7 +45,7 @@ function execute_query_filters() {
         "course_level_upper_filter": course_level_upper_filter,
         "course_level_graduate_filter": course_level_graduate_filter
     };
-    
+
     let token = "x=whGTdxSHX8M+c3";
 
     function gradeEval(val) {
@@ -79,42 +79,39 @@ function execute_query_filters() {
         return name.substring(0., indexed) + '.' + name.substring(indexed);
     }
 
-    sortTable = function(colunm) {
+    sortTable = function (colunm) {
         var table, rows, switching, i, x, y, shouldSwitch;
         table = document.getElementById("ctl00_ContentPlaceHolder1_gvCAPEs");
-        console.log(table);
         switching = true;
         while (switching) {
-          // Start by saying: no switching is done:
-          switching = false;
-          rows = table.rows;
-          /* Loop through all table rows (except the
-          first, which contains table headers): */
-          for (i = 1; i < (rows.length - 1); i++) {
-            // Start by saying there should be no switching:
-            shouldSwitch = false;
-            /* Get the two elements you want to compare,
-            one from current row and one from the next: */
-            x = rows[i].getElementsByTagName("TD")[colunm];
-            y = rows[i + 1].getElementsByTagName("TD")[colunm];
-            // Check if the two rows should switch place:
-            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-              // If so, mark as a switch and break the loop:
-              shouldSwitch = true;
-              break;
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /* Loop through all table rows (except the
+            first, which contains table headers): */
+            for (i = 1; i < (rows.length - 1); i++) {
+                // Start by saying there should be no switching:
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[colunm];
+                y = rows[i + 1].getElementsByTagName("TD")[colunm];
+                // Check if the two rows should switch place:
+                if (parseFloat($(x).text()) > parseFloat($(y).text())) {
+                    console.log($(x).text(),$(y).text());
+                    shouldSwitch = true;
+                    break;
+                }
             }
-          }
-          if (shouldSwitch) {
-            /* If a switch has been marked, make the switch
-            and mark that a switch has been done: */
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-          }
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark that a switch has been done: */
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
         }
-      }
+    }
 
     $.ajax({
-        headers: {"token": token },
+        headers: { "token": token },
         type: "POST",
         url: "https://cape.ucsdcssa.com:8443/namelesscape/course/" + getCourseName(courseName),
         // data: data,
