@@ -10,6 +10,15 @@ body{
   font-weight: bold;
   line-height: 1;
 }
+
+footer{
+  position: relative;
+  padding: 2rem 0 2rem 0 ;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
 .text-center{
   display:none;
 }
@@ -109,15 +118,10 @@ body{
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+  outline: none;
 }
 .searchButton:hover{
   background: #6e6e6e;
-}
-.iconword{
-  position: absolute;
-  bottom: 3%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 /* Safari */

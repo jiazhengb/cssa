@@ -95,8 +95,8 @@ function execute_query_filters() {
             shouldSwitch = false;
             /* Get the two elements you want to compare,
             one from current row and one from the next: */
-            x = rows[i].$("TD")[colunm];
-            y = rows[i + 1].$("TD")[colunm];
+            x = rows[i].getElementsByTagName("TD")[colunm];
+            y = rows[i + 1].getElementsByTagName("TD")[colunm];
             // Check if the two rows should switch place:
             if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
               // If so, mark as a switch and break the loop:
@@ -116,7 +116,7 @@ function execute_query_filters() {
     $.ajax({
         headers: {"token": token },
         type: "POST",
-        url: "https://104.236.138.205:8483/namelesscape/course/" + getCourseName(courseName),
+        url: "https://cape.ucsdcssa.com:8443/namelesscape/course/" + getCourseName(courseName),
         // data: data,
     }).done(function (res) {
         var courseDate = '';
