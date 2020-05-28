@@ -52,23 +52,23 @@ function execute_query_filters() {
         if (val == null)
             return 'N/A';
         if (val >= 4.0)
-            return val + '(A)';
-        if (val >= 3.7)
-            return val + '(A-)';
-        if (val >= 3.3)
             return val + '(A+)';
+        if (val >= 3.7)
+            return val + '(A)';
+        if (val >= 3.3)
+            return val + '(A-)';
         if (val >= 3.0)
-            return val + '(B)';
+            return val + '(B+)';
         if (val >= 2.7)
-            return val + '(B-)';
+            return val + '(B)';
         if (val >= 2.3)
-            return val + '(C+)';
+            return val + '(B-)';
         if (val >= 2.0)
-            return val + '(C)';
+            return val + '(C+)';
         if (val >= 1.7)
-            return val + '(C-)';
+            return val + '(C)';
         if (val >= 1.3)
-            return val + '(D+)';
+            return val + '(C-)';
         else
             return val + '(N/A)';
     }
