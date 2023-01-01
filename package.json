@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/davidbian1230/cssa#readme",
   "devDependencies": {
-    "html-webpack-plugin": "^4.3.0",
-    "webpack": "^4.43.0"
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.75.0"
   }
 }
